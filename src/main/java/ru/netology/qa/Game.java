@@ -1,35 +1,29 @@
 package ru.netology.qa;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashMap;
 
 public class Game {
-    List<Player> players = new ArrayList<>();
+    HashMap<String, Player> map = new HashMap<>();
 
     public Player register(Player player) {
-        players.add(player);
+        map.put(player.getName(), player);
         return player;
     }
 
-    public Player findByName(String name) {
-        for (Player player : players) {
-            if (player.getName() == name) {
-                return player;
-            }
-        }
-        return null;
+    public boolean findByName(String name) {
+        return map.containsKey(name);
     }
 
     public int round(String playerName1, String playerName2) {
-        Player player1 = findByName(playerName1);
-        Player player2 = findByName(playerName2);
-
-        if (player1 == null) {
+        if (findByName(playerName1) == false) {
             throw new NotRegisteredException(playerName1);
         }
-        if (player2 == null) {
+        if (findByName(playerName2) == false) {
             throw new NotRegisteredException(playerName2);
         }
+
+        Player player1 = map.get(playerName1);
+        Player player2 = map.get(playerName2);
 
         if (player1.getStrength() > player2.getStrength()) {
             return 1;
