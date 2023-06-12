@@ -39,7 +39,7 @@ public class GameTest {
     }
 
     @Test
-    public void ShouldRoundFirstWinner() {
+    public void ShouldRoundFirstIsWinner() {
 
         Player player1 = new Player(5, "Masha", 80);
         Player player2 = new Player(167, "Sasha", 38);
@@ -51,7 +51,7 @@ public class GameTest {
     }
 
     @Test
-    public void ShouldRoundSecondWinner() {
+    public void ShouldRoundSecondIsWinner() {
 
         Player player1 = new Player(5, "Masha", 80);
         Player player2 = new Player(167, "Sasha", 138);
@@ -73,5 +73,4 @@ public class GameTest {
 
         Assertions.assertEquals(0, game.round("Masha", "Sasha"));
     }
-
 }
