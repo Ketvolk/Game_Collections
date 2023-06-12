@@ -17,7 +17,6 @@ public class GameTest {
 
     @Test
     public void ShouldNotRoundOneNotRegistered() {
-
         Player player1 = new Player(5, "Masha", 80);
 
         game.register(player1);
@@ -30,9 +29,6 @@ public class GameTest {
     @Test
     public void ShouldNotRoundTwoNotRegistered() {
 
-        Player player1 = new Player(5, "Masha", 80);
-        Player player2 = new Player(167, "Sasha", 38);
-
         Assertions.assertThrows(NotRegisteredException.class, () -> {
             game.round("Masha", "Sasha");
         });
@@ -40,7 +36,6 @@ public class GameTest {
 
     @Test
     public void ShouldRoundFirstIsWinner() {
-
         Player player1 = new Player(5, "Masha", 80);
         Player player2 = new Player(167, "Sasha", 38);
 
@@ -52,7 +47,6 @@ public class GameTest {
 
     @Test
     public void ShouldRoundSecondIsWinner() {
-
         Player player1 = new Player(5, "Masha", 80);
         Player player2 = new Player(167, "Sasha", 138);
 
@@ -64,7 +58,6 @@ public class GameTest {
 
     @Test
     public void ShouldRoundTwoWinners() {
-
         Player player1 = new Player(5, "Masha", 80);
         Player player2 = new Player(167, "Sasha", 80);
 
