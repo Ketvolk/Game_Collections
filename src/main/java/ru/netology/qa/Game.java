@@ -15,10 +15,10 @@ public class Game {
     }
 
     public int round(String playerName1, String playerName2) {
-        if (findByName(playerName1) == false) {
+        if (!findByName(playerName1)) {
             throw new NotRegisteredException(playerName1);
         }
-        if (findByName(playerName2) == false) {
+        if (!findByName(playerName2)) {
             throw new NotRegisteredException(playerName2);
         }
 
