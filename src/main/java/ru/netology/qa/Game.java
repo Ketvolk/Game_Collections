@@ -3,7 +3,7 @@ package ru.netology.qa;
 import java.util.HashMap;
 
 public class Game {
-    HashMap<String, Player> map = new HashMap<>();
+    private HashMap<String, Player> map = new HashMap<>();
 
     public Player register(Player player) {
         map.put(player.getName(), player);
